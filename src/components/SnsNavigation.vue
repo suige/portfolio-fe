@@ -39,6 +39,7 @@
       margin-bottom: $spacer*2;
       a {
         &:hover {
+          background: none;
           svg {
             fill: $link-color;
           }

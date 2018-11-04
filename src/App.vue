@@ -35,7 +35,7 @@
     font-size: 62.5%;
   }
   body {
-    font-size: 1.8rem;
+    font-size: 2rem;
     background-color: $body-color;
   }
   p {
@@ -45,17 +45,28 @@
     font-family: $font-family-h;
     font-weight: 700;
   }
+  h1 {
+    margin: 1em 0;
+  }
   ul, li {
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
+  a {
+    color: $link-color;
+    font-weight: $bold;
+    text-decoration: none;
+    &:hover {
+      background-color: lighten($link-color, 40%);
+    }
+  }
+
   #app {
     font-family: $font-family;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: $font-color;
   }
   .container {

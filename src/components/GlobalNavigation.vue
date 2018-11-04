@@ -19,8 +19,9 @@
 
 <style lang="scss" scoped>
   #nav {
-    padding: $spacer*3;
+    padding: $spacer*3 $spacer*5;
     font-family: $font-family-h;
+    width: 100%;
     ul {
       display: flex;
       align-items: baseline;

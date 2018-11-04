@@ -1,8 +1,8 @@
 <template>
   <div class="index">
     <section id="hero">
-      <h1>Hello, I am Kaori Suigetsu, a front-end developer and also a web designer.</h1>
-      <p>I work as a web developer and designer for 3 years. I am currntry studing SVG, Canvas and CSS animation to produce amazing intaractional web site for my clients. I moved to Vancouver, Canada because I would like to learn web animation more.</p>
+      <h1>Hello, I am a front-end developer based in Vancouver <span>(๑´ڡ`๑)</span></h1>
+      <p>Kaori has experience of 3 years+ in web development. Kaori likes <strong>CSS animation</strong> and <strong>Vue.js</strong>. Kaori is currently studying SVG, Canvas and advanced CSS animation to produce the amazing interactional web site for clients. </p>
       <p>If you get interested me, please <a href="#contact">contact me</a>.</P>
     </section>
   </div>
@@ -18,3 +18,12 @@ import { Component, Vue } from 'vue-property-decorator';
 })
 export default class Home extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+  h1 {
+    font-size: 5.6rem;
+    span {
+      font-size: .6em;
+    }
+  }
+</style>

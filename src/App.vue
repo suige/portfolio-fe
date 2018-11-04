@@ -1,9 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav id="nav">
+      <ul>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/works">Works</router-link></li>
+        <li><router-link to="/about">AboutMe</router-link></li>
+        <li><router-link to="/contact">Contact</router-link></li>
+      </ul>
+    </nav>
+    <ul class="sns-link">
+      <li><a href="https://www.linkedin.com/in/suige" target="_blank">
+        <img src="./assets/images/linkedin.svg" alt="linkedin">
+      </a></li>
+      <li><a href="https://codepen.io/suige/" target="_blank">
+        <img src="./assets/images/codepen.svg" alt="codepen">
+      </a></li>
+      <li><a href="https://github.com/suige" target="_blank">
+        <img src="./assets/images/github.svg" alt="github">
+      </a></li>
+    </ul>
     <transition name="component-fade" mode="out-in">
       <router-view/>
     </transition>
@@ -42,25 +57,10 @@
   }
 }
 .component-fade-enter-active, .component-fade-leave-active {
-  -webkit-animation: ldt-vortex-out 1s infinite;
-  animation: ldt-vortex-out 1s infinite;
-  animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  transition: opacity .5s
 }
-/*.component-fade-enter, .component-fade-leave-to*/
-  /*opacity: 0;*/
-/*}*/
-
-@keyframes ldt-vortex-out {
-  0% {
-    -webkit-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotate(1800deg) scale(3);
-    transform: rotate(1800deg) scale(3);
-    opacity: 0;
-  }
+.component-fade-enter, .component-fade-leave-to {
+  opacity: 0;
 }
 
 </style>

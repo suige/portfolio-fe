@@ -8,7 +8,7 @@
   import { Component, Vue } from 'vue-property-decorator';
 
   @Component
-  export default class HelloWorld extends Vue {
+  export default class FirstLoading extends Vue {
     get loading() { return this.$store.state.loading; }
   }
 </script>

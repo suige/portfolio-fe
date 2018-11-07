@@ -2,11 +2,11 @@
   <div id="app">
     <GlobalNavigation></GlobalNavigation>
     <SnsNavigation></SnsNavigation>
-    <transition name="component-fade" mode="out-in">
-      <div class="container">
+    <div class="container">
+      <transition name="page" mode="out-in">
         <router-view/>
-      </div>
-    </transition>
+      </transition>
+    </div>
     <FirstLoading></FirstLoading>
   </div>
 </template>
@@ -46,6 +46,7 @@
     font-weight: 700;
   }
   h1 {
+    font-size: 4.6rem;
     margin: 1em 0;
   }
   ul, li {
@@ -72,11 +73,10 @@
   .container {
     padding: 0 $spacer*5;
   }
-  .component-fade-enter-active, .component-fade-leave-active {
-    transition: opacity .5s
+  .page-enter-active, .page-leave-active {
+    transition: opacity .5s;
   }
-  .component-fade-enter, .component-fade-leave-to {
+  .page-enter, .page-leave-to {
     opacity: 0;
   }
-
 </style>

@@ -1,7 +1,7 @@
 <template>
   <section id="contact">
-    <h2>contact me</h2>
-    <p>If you want to ask something or just say hello, please email me. I will get back to you as soon as possible.</p>
+    <h1>Contact Me</h1>
+    <p>If you want to ask something or just say hello, please message me.</p>
     <a href="mailto:suigetsukaori@gmail.com" class="email">suigetsukaori@gmail.com</a>
     <form action="" class="contact-form" v-if="false">
       <div class="form-group">

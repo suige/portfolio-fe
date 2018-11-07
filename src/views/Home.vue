@@ -1,11 +1,9 @@
 <template>
-  <div class="index">
-    <section id="hero">
-      <h1>Hello, I am a front-end developer based in Vancouver <span>(๑´ڡ`๑)</span></h1>
-      <p>Kaori has experience of 3 years+ in web development. Kaori likes <strong>CSS animation</strong> and <strong>Vue.js</strong>. Kaori is currently studying SVG, Canvas and advanced CSS animation to produce the amazing interactional web site for clients. </p>
-      <p>If you get interested me, please <a href="#contact">contact me</a>.</P>
-    </section>
-  </div>
+  <section id="hero">
+    <h1>Hello, I am a Front-End Developer<br>Based in Vancouver <span>(๑´ڡ`๑)</span></h1>
+    <p>Kaori has experience of 3 years+ in web development. Kaori likes <strong>CSS animation</strong> and <strong>Vue.js</strong>. Kaori is currently studying SVG, Canvas and advanced CSS animation to produce the amazing interactional web site for clients. </p>
+    <p>If you get interested me, please <a href="#contact">contact me</a>.</P>
+  </section>
 </template>
 
 

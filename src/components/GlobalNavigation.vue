@@ -1,11 +1,12 @@
 <template>
   <nav id="nav">
     <ul>
-      <li class="logo"><router-link to="/"><logo></logo></router-link></li>
-      <li><router-link to="/works">Works</router-link></li>
-      <li><router-link to="/about">AboutMe</router-link></li>
-      <li><router-link to="/contact">Contact</router-link></li>
+      <li class="logo"><router-link to="/"><logo/></router-link></li>
+      <li><button @mouseover="onMouseover" @mouseleave="onMouseleave">Works</button></li>
+      <li><button @mouseover="onMouseover" @mouseleave="onMouseleave">AboutMe</button></li>
+      <li><button @mouseover="onMouseover" @mouseleave="onMouseleave">Contact</button></li>
     </ul>
+    <div class="navBackground" v-show="isMouseover"></div>
   </nav>
 </template>
 
@@ -18,7 +19,16 @@
       Logo,
     },
   })
-  export default class GlobalNavigation extends Vue {}
+  export default class GlobalNavigation extends Vue {
+
+    private isMouseover: boolean = false;
+    public onMouseover(): void {
+      this.isMouseover = true;
+    }
+    public onMouseleave(): void {
+      this.isMouseover = false;
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -32,34 +42,45 @@
     }
     li {
       flex: 0 1 auto;
-      a {
-        display: inline-block;
-        font-weight: bold;
-        color: $font-color;
-        text-decoration: none;
-        text-transform: uppercase;
-        line-height: 2em;
-        transition: color .2s ease-out;
-        &:hover {
-          color: $link-color;
-        }
-      }
       &.logo {
         flex: 1 0 auto;
         text-align: left;
-        a {
-          position: relative;
-          padding-left: 2.5em;
-        }
       }
       &:not(.logo) {
         padding: 0 .5em;
-        a {
-          &.router-link-exact-active {
-            color: $link-color;
-          }
-        }
       }
     }
+  }
+  button {
+    display: inline-block;
+    font-weight: bold;
+    color: $font-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 2em;
+    transition: color .2s ease-out;
+    border: none;
+    font-weight: $bold;
+    font-size: 2rem;
+    font-family: $font-family-h;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    position: relative;
+    &:hover {
+      color: $link-color;
+      background: $body-color;
+      z-index: 101;
+    }
+  }
+  .navBackground {
+    background: lighten($sub-color, 40%);
+    opacity: .3;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 100;
   }
 </style>

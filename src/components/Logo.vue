@@ -1,13 +1,15 @@
 <template>
   <div :class="{animate: isActive}">
     <img src="@/assets/images/logo.svg" alt="Koari">
-    <span>K</span>
-    <span>a</span>
-    <span>o</span>
-    <span>r</span>
-    <span>i</span>
-    <span>.</span>
-    <span>S</span>
+    <div class="title">
+      <span>K</span>
+      <span>a</span>
+      <span>o</span>
+      <span>r</span>
+      <span>i</span>
+      <span>.</span>
+      <span>S</span>
+    </div>
   </div>
 </template>
 
@@ -31,13 +33,20 @@
 </script>
 
 <style lang="scss" scoped>
+  div {
+    position: relative;
+  }
+  .title {
+    display: inline-block;
+    padding-left: .5em;
+    text-transform: uppercase;
+    color: $font-color;
+  }
   img {
     display: inline-block;
-    width: 2em;
-    height: auto;
-    position: absolute;
-    left: 0;
-    top: 0;
+    width: auto;
+    height: 4rem;
+    vertical-align: bottom;
     animation: rock 1s linear alternate infinite;
   }
   // KAORI.S

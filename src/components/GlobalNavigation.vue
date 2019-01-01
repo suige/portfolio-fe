@@ -1,7 +1,7 @@
 <template>
   <nav id="nav">
     <ul>
-      <li class="logo"><router-link to="/"><img src="@/assets/images/logo.svg" alt="Koari">Kaori Suigetsu</router-link></li>
+      <li class="logo"><router-link to="/"><logo></logo></router-link></li>
       <li><router-link to="/works">Works</router-link></li>
       <li><router-link to="/about">AboutMe</router-link></li>
       <li><router-link to="/contact">Contact</router-link></li>
@@ -11,10 +11,14 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
+  import Logo from '@/components/Logo.vue';
 
-  @Component
-  export default class GlobalNavigation extends Vue {
-  }
+  @Component({
+    components: {
+      Logo,
+    },
+  })
+  export default class GlobalNavigation extends Vue {}
 </script>
 
 <style lang="scss" scoped>
@@ -46,14 +50,6 @@
         a {
           position: relative;
           padding-left: 2.5em;
-          img {
-            display: inline-block;
-            width: 2em;
-            height: auto;
-            position: absolute;
-            left: 0;
-            top: 0;
-          }
         }
       }
       &:not(.logo) {

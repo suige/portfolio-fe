@@ -48,6 +48,7 @@
     }
 
     public onClick(name: string): void {
+      this.isMouseover = false;
       this.$router.push(name);
     }
   }
@@ -60,11 +61,15 @@
     padding: $spacer*3 $spacer*5;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
 
     @include sp-layout {
       padding: $spacer*3 $width-space-sp 0;
     }
 
+    a:hover {
+      background: none;
+    }
 
     ul {
       display: flex;
@@ -206,7 +211,7 @@
   }
 
   .fade-leave-active {
-    transition: opacity .3s;
+    transition: opacity .2s;
   }
 
   .fade-enter, .fade-leave-to {

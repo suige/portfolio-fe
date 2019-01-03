@@ -61,7 +61,7 @@
       margin-right: 12vw;
     }
     @include sp-layout {
-      padding: 10px $width-space-sp+1 10px $width-space-sp;
+      padding: $spacer*2 $width-space-sp+1 $spacer*2 $width-space-sp;
     }
   }
   footer {

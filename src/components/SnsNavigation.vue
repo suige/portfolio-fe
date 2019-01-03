@@ -32,12 +32,27 @@
 
 <style lang="scss" scoped>
   ul {
-    position: fixed;
-    right: $spacer;
-    top: 40%;
+    display: flex;
+    @include pc-layout {
+      justify-content: center;
+      flex-direction: column;
+    }
+    @include sp-layout {
+      justify-content: center;
+    }
     li {
-      margin-bottom: $spacer*2;
+      margin: 0 $spacer $spacer*2;
+      display: inline-block;
+      text-align: center;
       a {
+        padding: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        background: $font-color;
+        line-height: 0;
+        svg {
+          fill: $body-color;
+        }
         &:hover {
           background: none;
           svg {

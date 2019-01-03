@@ -1,12 +1,15 @@
 <template>
   <div id="app">
     <GlobalNavigation></GlobalNavigation>
-    <SnsNavigation></SnsNavigation>
     <div class="container">
       <transition name="page" mode="out-in">
         <router-view/>
       </transition>
     </div>
+    <footer>
+      <SnsNavigation></SnsNavigation>
+      <p>kaori suigetsu</p>
+    </footer>
     <FirstLoading></FirstLoading>
   </div>
 </template>
@@ -27,51 +30,61 @@
   export default class App extends Vue {}
 </script>
 
-<style lang="scss">
-  * {
-    box-sizing: border-box;
-  }
-  html {
-    font-size: 62.5%;
-  }
-  body {
-    font-size: 2rem;
-    background-color: $body-color;
-  }
-  p {
-    line-height: 1.6em;
-  }
-  h1, h2, h3, h4 {
-    font-family: $font-family-h;
-    font-weight: 700;
-  }
-  h1 {
-    font-size: 4.6rem;
-    margin: 1em 0;
-  }
-  ul, li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  a {
-    color: $link-color;
-    font-weight: $bold;
-    text-decoration: none;
-    &:hover {
-      background-color: lighten($link-color, 40%);
-    }
-  }
-
+<style lang="scss" scoped>
   #app {
     font-family: $font-family;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $font-color;
+    min-height: 100vh;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      width: 12vw;
+      max-width: 100px;
+      height: 100%;
+      background: $font-color;
+      position: absolute;
+      top:0;
+      right: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
   }
   .container {
-    padding: 0 $spacer*5;
+    max-width: 1200px;
+    background-color: $body-color;
+    border-left: 4vw solid $font-color;
+    @include pc-layout {
+      padding: $spacer*3 12vw $spacer*3 $spacer*5;
+      margin-right: 12vw;
+    }
+    @include sp-layout {
+      padding: 10px $width-space-sp+1 10px $width-space-sp;
+    }
+  }
+  footer {
+    margin: 0;
+    padding: $spacer 0;
+    @include pc-layout {
+      position: fixed;
+      right: 0;
+      top: 40%;
+      text-align: right;
+    }
+    p {
+      @include pc-layout {
+        transform-origin: 50% 50%;
+        transform: rotateZ(90deg) translateX(5rem);
+        display: inline-block;
+        color: $body-color;
+      }
+      text-align: center;
+      margin: 0;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
   }
   .page-enter-active, .page-leave-active {
     transition: opacity .5s;

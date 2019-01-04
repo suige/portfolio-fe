@@ -29,7 +29,11 @@
     public isLoading: boolean = true;
 
     private mounted(): void {
-      setTimeout(() => { this.isLoading = false; }, 5500);
+      setTimeout(() => {
+        const overlay = document.querySelector('.overlay') as HTMLElement;
+        overlay.style.display = 'none';
+        this.isLoading = false;
+      }, 5500);
     }
   }
 </script>
@@ -41,7 +45,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 100;
+    z-index: 999;
+    -webkit-transform: translateZ(999px);
     background-color: $body-color;
     animation: fadeout 1s 4.5s forwards;
   }

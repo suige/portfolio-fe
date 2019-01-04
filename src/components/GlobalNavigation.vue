@@ -6,9 +6,9 @@
         <li>
           <button @mouseover="onMouseover" @mouseleave="onMouseleave" @click="onClick('works')">Works</button>
         </li>
-        <li>
-          <button @mouseover="onMouseover" @mouseleave="onMouseleave" @click="onClick('about')">AboutMe</button>
-        </li>
+        <!--<li>-->
+          <!--<button @mouseover="onMouseover" @mouseleave="onMouseleave" @click="onClick('about')">AboutMe</button>-->
+        <!--</li>-->
         <li>
           <button @mouseover="onMouseover" @mouseleave="onMouseleave" @click="onClick('contact')">Contact</button>
         </li>

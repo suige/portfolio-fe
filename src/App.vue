@@ -9,6 +9,7 @@
       <p>kaori suigetsu</p>
     </footer>
     <FirstLoading></FirstLoading>
+    <BackgroundStars></BackgroundStars>
   </div>
 </template>
 
@@ -17,12 +18,14 @@
   import FirstLoading from '@/components/FirstLoading.vue';
   import GlobalNavigation from '@/components/GlobalNavigation.vue';
   import SnsNavigation from '@/components/SnsNavigation.vue';
+  import BackgroundStars from '@/components/BackgroundStars.vue';
 
   @Component({
     components: {
       FirstLoading,
       GlobalNavigation,
       SnsNavigation,
+      BackgroundStars,
     },
   })
   export default class App extends Vue {}

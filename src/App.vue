@@ -1,11 +1,9 @@
 <template>
   <div id="app">
     <GlobalNavigation></GlobalNavigation>
-    <div class="container">
-      <transition name="page" mode="out-in">
-        <router-view/>
-      </transition>
-    </div>
+    <transition name="page" mode="out-in">
+      <router-view/>
+    </transition>
     <footer>
       <SnsNavigation></SnsNavigation>
       <p>kaori suigetsu</p>
@@ -52,18 +50,6 @@
       z-index: -1;
     }
   }
-  .container {
-    max-width: 1200px;
-    background-color: $body-color;
-    border-left: 4vw solid $font-color;
-    @include pc-layout {
-      padding: $spacer*3 12vw $spacer*3 $spacer*5;
-      margin-right: 12vw;
-    }
-    @include sp-layout {
-      padding: $spacer*2 $width-space-sp+1 $spacer*2 $width-space-sp;
-    }
-  }
   footer {
     margin: 0;
     padding: $spacer 0;
@@ -86,10 +72,39 @@
       text-transform: uppercase;
     }
   }
-  .page-enter-active, .page-leave-active {
-    transition: opacity .5s;
+
+  .page-enter {
+    transform: translateX(-100%);
   }
-  .page-enter, .page-leave-to {
-    opacity: 0;
+  .page-enter-active {
+    transition: all ease-out .7s;
   }
+  .page-leave-active {
+    &::before {
+      content: '';
+      display: block;
+      width: 100vw;
+      height: 100%;
+      background-color: $font-color;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 11;
+      animation: slide .5s ease-out forwards;
+    }
+    transition: all .5s ease-out .4s;
+  }
+  .page-leave-to {
+    transform: translateX(120%);
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
 </style>

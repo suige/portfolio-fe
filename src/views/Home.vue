@@ -1,18 +1,22 @@
 <template>
-  <section id="hero">
-    <h1><span v-for="t in title" :class="[t === ' ' ? 'space' : '']">{{t}}</span></h1>
-    <p class="sub-title">Animation Lover <span>(๑´ڡ`๑)</span></p>
-    <p>Kaori has experience of 3 years+ in web development. Kaori likes <strong>CSS animation</strong> and <strong>Vue.js</strong>. Kaori is currently studying SVG, Canvas and advanced CSS animation to produce the amazing interactional web site for clients. </p>
-    <p>If you get interested me, please <a href="#contact">contact me</a>.</P>
-  </section>
+  <Container>
+    <section id="hero">
+      <h1><span v-for="t in title" :class="[t === ' ' ? 'space' : '']">{{t}}</span></h1>
+      <p class="sub-title">Animation Lover <span>(๑´ڡ`๑)</span></p>
+      <p>Kaori has experience of 3 years+ in web development. Kaori likes <strong>CSS animation</strong> and <strong>Vue.js</strong>. Kaori is currently studying SVG, Canvas and advanced CSS animation to produce the amazing interactional web site for clients. </p>
+      <p>If you get interested me, please <a href="#contact">contact me</a>.</P>
+    </section>
+  </Container>
 </template>
 
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Container from '@/components/Container.vue';
 
 @Component({
   components: {
+    Container,
   },
 })
 export default class Home extends Vue {

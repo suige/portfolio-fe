@@ -1,23 +1,26 @@
 <template>
-<section id="works">
-  <h1>works</h1>
-  <div class="work-list-card">
-    <section v-for="c in comments" class="listcard">
-      <img :src="c.url" />
-      <div class="text">
-        <h3>{{ c.name }}</h3>
-        <p>{{ c.tech }}</p>
-  <!--          <router-link :to="{ name: 'detail', params: { id: c.id } }" class="btn">DETAIL</router-link> -->
-      </div>
-    </section>
-  </div>
+  <Container>
+  <section id="works">
+    <h1>works</h1>
+    <div class="work-list-card">
+      <section v-for="c in comments" class="listcard">
+        <img :src="c.url" />
+        <div class="text">
+          <h3>{{ c.name }}</h3>
+          <p>{{ c.tech }}</p>
+    <!--          <router-link :to="{ name: 'detail', params: { id: c.id } }" class="btn">DETAIL</router-link> -->
+        </div>
+      </section>
+    </div>
 
-</section>
-
+  </section>
+  </Container>
 </template>
 
 <script>
-export default {
+  import Container from '@/components/Container.vue';
+
+  export default {
   name: 'Works',
   data() {
     return {
@@ -37,6 +40,9 @@ export default {
       ],
     };
   },
+    components: {
+      Container,
+    },
 };
 </script>
 

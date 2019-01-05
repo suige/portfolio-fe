@@ -1,4 +1,5 @@
 <template>
+  <Container>
   <section id="contact">
     <h1>Contact Me</h1>
     <p>If you want to ask something or just say hello, please message me.</p>
@@ -21,13 +22,19 @@
       </div>
     </form>
   </section>
-
+  </Container>
 </template>
 
 <script>
-export default {
-  name: 'Contact',
-};
+  import {Component, Vue} from 'vue-property-decorator';
+  import Container from '@/components/Container.vue';
+
+  @Component({
+    components: {
+      Container,
+    },
+  })
+  export default class Contact extends Vue {}
 </script>
 
 <style lang="scss">

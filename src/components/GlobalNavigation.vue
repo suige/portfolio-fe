@@ -4,13 +4,10 @@
       <router-link to="/"><logo/></router-link>
       <ul>
         <li>
-          <button @click="onClick('works')">Works</button>
+          <GlobalNavButton title="works"/>
         </li>
-        <!--<li>-->
-          <!--<button @mouseover="onMouseover" @mouseleave="onMouseleave" @click="onClick('about')">AboutMe</button>-->
-        <!--</li>-->
         <li>
-          <button @click="onClick('contact')">Contact</button>
+          <GlobalNavButton title="contact"/>
         </li>
       </ul>
     </nav>
@@ -20,17 +17,15 @@
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
   import Logo from '@/components/Logo.vue';
+  import GlobalNavButton from '@/components/GlobalNavButton.vue';
 
   @Component({
     components: {
       Logo,
+      GlobalNavButton,
     },
   })
   export default class GlobalNavigation extends Vue {
-
-    public onClick(name: string): void {
-      this.$router.push(name);
-    }
   }
 </script>
 
@@ -70,27 +65,6 @@
       @include pc-layout {
         padding: 0 .5em;
       }
-    }
-  }
-
-  button {
-    display: inline-block;
-    color: $font-color;
-    text-transform: uppercase;
-    line-height: 2em;
-    font-weight: $bold;
-    font-size: 2rem;
-    font-family: $font-family-h;
-    cursor: pointer;
-    outline: none;
-    background: none;
-    border: none;
-    border-radius: 2rem;
-    position: relative;
-    background: $body-color;
-
-    &:hover {
-      z-index: 101;
     }
   }
 </style>

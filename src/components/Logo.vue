@@ -2,13 +2,17 @@
   <div :class="{animate: isActive}">
     <img src="@/assets/images/logo.svg" alt="Koari">
     <div class="title">
-      <span>K</span>
+      <span>k</span>
       <span>a</span>
       <span>o</span>
       <span>r</span>
       <span>i</span>
       <span>.</span>
-      <span>S</span>
+      <span>s</span>
+      <span>u</span>
+      <span>i</span>
+      <span>g</span>
+      <span>e</span>
     </div>
   </div>
 </template>
@@ -49,8 +53,8 @@
     vertical-align: bottom;
     animation: rock 1s linear alternate infinite;
   }
-  // KAORI.S
-  @for $i from 1 through 8 {
+  // KAORI.SUIGE
+  @for $i from 1 through 11 {
     .animate span:nth-child(#{$i}) {
       display: inline-block;
       animation: spin 1s linear 0.3s*$i;

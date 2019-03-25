@@ -4,69 +4,44 @@
     <h1>Contact Me</h1>
     <p>If you want to ask something or just say hello, please message me.</p>
     <a href="mailto:suigetsukaori@gmail.com" class="email">suigetsukaori@gmail.com</a>
-    <form action="" class="contact-form" v-if="false">
-      <div class="form-group">
-        <label for="">name<span>*</span></label>
-        <input type="text" name="name">
-      </div>
-      <div class="form-group">
-        <label for="">email<span>*</span></label>
-        <input type="email" name="email" autocorrect="off" autocapitalize="off">
-      </div>
-      <div class="form-group">
-        <label for="">message<span>*</span></label>
-        <textarea name="message" rows="5"></textarea>
-      </div>
-      <div class="form-group">
-        <button class="btn">send</button>
-      </div>
-    </form>
   </section>
+    <div class="image-wrapper">
+      <icon-base icon-name="steamboat" view-box="0 0 2676 3002"><steamboat/></icon-base>
+    </div>
   </Container>
 </template>
 
-<script>
+<script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
   import Container from '@/components/Container.vue';
+  import IconBase from '@/components/IconBase.vue';
+  import Steamboat from '@/components/icons/Steamboat.vue';
 
   @Component({
     components: {
       Container,
+      IconBase,
+      Steamboat,
     },
   })
   export default class Contact extends Vue {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-#contact {
-  .contact-form {
-    width: 100%;
-    margin: $section-padding*2 0;
-    .form-group {
-      margin: 5px 0;
-      label {
-        display: block;
-        span {
-          font-size: 0.8em;
-          padding: 0.5em;
-          color: $link-color;
-        }
-      }
-      input, textarea {
-        width: 100%;
-      }
-    }
-    .btn {
-      width: 250px;
-    }
-  }
-}
 .email {
   font-family: $font-family-h;
   font-weight: $font-bold;
   font-size: 1.6em;
 }
 
+.image-wrapper {
+  width: 80vw;
+  max-width: 700px;
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
 </style>
 

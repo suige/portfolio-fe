@@ -12,6 +12,7 @@
             </div>
           </div>
           <div class="content">
+            <p class="date">{{project.date}}</p>
             <h3>{{ project.name }}</h3>
             <p class="subtitle">{{ project.tech }}</p>
             <p>{{project.description}}</p>
@@ -65,10 +66,11 @@
               require('@/assets/images/works/sample.jpg'),
             ],
             name: 'vanQuestion',
-            url: 'https://google.com/',
+            url: '',
             github: 'https://github.com/suige/React-vanQuestion',
-            description: 'This is a BBS website for people lived in Vancouver.',
-            tech: 'ReactJS, HTML, CSS, UI/UX Design',
+            description: 'Since I came to Vancouver, there are a lot of things I don\'t know about life for example where to buy food, how to get a bus and more. Every time there was a problem, people helped me. This is a communication website dedicated  to people living in Vancouver. Users can post questions and answers easily. This is my first ReactJS project.',
+            tech: 'UI/UX Design, Front-end',
+            date: 'work in progress',
             positionX: 0,
           },
           {
@@ -82,8 +84,9 @@
             name: 'My Portfolio with CSS Animation',
             url: 'https://suige.gripics.com/',
             github: 'https://github.com/suige/portfolio-v2',
-            description: 'This is one of my portfolio that focus on CSS animation. Especially, loading animation is implimented by only CSS.',
-            tech: 'Vue.js, HTML, CSS, All Design',
+            description: 'This is one of my portfolios that focus on CSS animation. Especially, loading animation is implemented by the only CSS. The website is inspired by a black and white animation of the 1920s.',
+            tech: 'UI/UX Design, Front-end',
+            date: '2019.05',
             positionX: 0,
           },
           {
@@ -96,8 +99,9 @@
             ],
             name: 'CAVANCLE',
             url: '',
-            description: 'This is a cafe searching website for Japanese living in Vancouver. My roll in this project is mainly to implement website using Vue.js. We discuss the UI design on InVision and adobe XD',
-            tech: 'Vue.js, HTML, CSS',
+            description: 'This is a cafe searching website for Japanese living in Vancouver. My roll in this project is to implement the website using Vue.js. We discuss the UI design on InVision and adobe XD. I enjoy creating interactive parts such as searching form.',
+            tech: 'Front-end',
+            date: '2017.07',
             positionX: 0,
           },
           {
@@ -111,7 +115,8 @@
             name: 'My Friend\'s Blog',
             url: 'https://www.changami.com/',
             description: 'This is a blog created by WordPress based on Sage. My friend likes old-school TV games, so the theme is used 8 bit font and characters.',
-            tech: 'WordPress, HTML, CSS, UI Design',
+            tech: 'UI/UX Design, Front-end',
+            date: '2016.12',
             positionX: 0,
           },
         ],
@@ -237,6 +242,11 @@
       p {
         font-size: 0.9em;
         background-color: $body-color;
+      }
+
+      .date {
+        color: $main-color;
+        font-size: .8em;
       }
     }
 

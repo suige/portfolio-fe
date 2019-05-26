@@ -4,13 +4,6 @@
       <h1>works</h1>
       <div class="work-list">
         <section v-for="(project, index) in projects" class="work">
-          <div class="slider-wrapper">
-            <div class="slider" :style="slideTranslateX(index)">
-              <div class="slider-image" v-for="image in project.images">
-                <img :src="image"/>
-              </div>
-            </div>
-          </div>
           <div class="content">
             <p class="date">{{project.date}}</p>
             <h3>{{ project.name }}</h3>
@@ -39,6 +32,13 @@
                         fill-rule="evenodd"></path>
                 </svg>
               </button>
+            </div>
+          </div>
+          <div class="slider-wrapper">
+            <div class="slider" :style="slideTranslateX(index)">
+              <div class="slider-image" v-for="image in project.images">
+                <img :src="image"/>
+              </div>
             </div>
           </div>
         </section>
@@ -148,8 +148,16 @@
 </script>
 
 <style lang="scss" scoped>
-  .work-list {
-    margin-right: -12vw;
+  @mixin pc-work-layout {
+    @media screen and (min-width: 1023px) {
+      @content;
+    }
+  }
+
+  @include pc-layout {
+    .work-list {
+      margin-right: calc(-12vw + 3rem);
+    }
   }
 
   .work {
@@ -159,8 +167,12 @@
 
     .slider-control {
       text-align: right;
+      display: none;
+      @include pc-layout {
+        display: block;
+      }
 
-      button {
+        button {
         border: none;
         background-color: $font-color;
         width: 32px;
@@ -198,12 +210,20 @@
     }
 
     .slider {
-      padding-left: calc(35% + #{$spacer*4});
       padding-top: $spacer;
       padding-bottom: $spacer;
       white-space: nowrap;
-      overflow-x: visible;
+      overflow-x: scroll;
       transition: all .2s;
+      @include pc-work-layout {
+        padding-left: calc(35% + #{$spacer*4});
+      }
+      @include sp-layout {
+        transform: none!important;
+      }
+      @include pc-layout {
+        overflow-x: visible;
+      }
 
       &::-webkit-scrollbar {
         display: none !important;
@@ -223,12 +243,15 @@
     }
 
     .content {
-      width: 35%;
-      position: absolute;
-      bottom: 20%;
-      left: $spacer;
       background-color: $body-color;
       padding: $spacer $spacer*2;
+
+      @include pc-work-layout {
+        width: 35%;
+        position: absolute;
+        bottom: 20%;
+        left: $spacer;
+      }
 
       h3 {
         margin: 0 auto $spacer;

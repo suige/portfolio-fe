@@ -2,9 +2,11 @@
   <Container>
     <section id="hero">
       <h1><span v-for="t in title" :class="[t === ' ' ? 'space' : '']">{{t}}</span></h1>
-      <p class="sub-title">Animation Lover <span>(๑´ڡ`๑)</span></p>
-      <p>Kaori has experience of 3 years+ in web development. Kaori likes <strong>CSS animation</strong> and <strong>Vue.js</strong>. Kaori is currently studying SVG, Canvas and advanced CSS animation to produce the amazing interactional web site for clients. </p>
-      <p>If you get interested me, please <a href="#contact">contact me</a>.</P>
+      <p class="sub-title">Animation Lover</p>
+      <p>Front-end web developer with 3+ years of experience.</p>
+      <p>My objective is to produce easy-to-understand interfaces based on users behaviors with keen attention to detail.</p>
+      <p>Kaori stays on top of new front-end technology trends because I always explore the best ways to improve the client's experience.</p>
+      <p>If you get interested me, please <router-link to="contact" class="button">contact me</router-link>.</P>
     </section>
   </Container>
 </template>

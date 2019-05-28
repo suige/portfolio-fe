@@ -32,7 +32,7 @@
 .email {
   font-family: $font-family-h;
   font-weight: $font-bold;
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 
 .image-wrapper {

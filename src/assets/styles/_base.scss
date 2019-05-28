@@ -27,10 +27,26 @@ ul, li {
 }
 
 a {
-  color: $link-color;
+  color: $main-color;
   font-weight: $bold;
   text-decoration: none;
   &:hover {
-    background-color: lighten($link-color, 40%);
+    color: $font-color;
+  }
+}
+.button {
+  font-weight: $bold;
+  text-decoration: none;
+  background-color: $font-color;
+  color: $body-color;
+  display: inline-block;
+  padding: 2px 1em;
+  border-radius: 1em;
+  font-family: $font-family-h;
+  letter-spacing: 1px;
+  font-size: .9em;
+  line-height: 1.2;
+  &:hover {
+    color: $main-color;
   }
 }

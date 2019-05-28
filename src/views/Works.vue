@@ -274,21 +274,6 @@
     .button-wrapper {
       margin: $spacer 0;
     }
-
-    .button {
-      background-color: $font-color;
-      color: $body-color;
-      display: inline-block;
-      padding: 2px 1em;
-      border-radius: 1em;
-      font-family: $font-family-h;
-      letter-spacing: 1px;
-      font-size: .9em;
-
-      &:hover {
-        color: $main-color;
-      }
-    }
   }
 
 </style>

@@ -60,10 +60,10 @@
           {
             id: 'vanquestion',
             images: [
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
+              require('@/assets/images/works/vanquestion/vanquestion1.jpg'),
+              require('@/assets/images/works/vanquestion/vanquestion2.jpg'),
+              require('@/assets/images/works/vanquestion/vanquestion3.jpg'),
+              require('@/assets/images/works/vanquestion/vanquestion4.jpg'),
             ],
             name: 'vanQuestion',
             url: '',
@@ -76,10 +76,9 @@
           {
             id: 'portfolio-v2',
             images: [
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
+              require('@/assets/images/works/portfolio-v2/portfolio1.jpg'),
+              require('@/assets/images/works/portfolio-v2/portfolio2.jpg'),
+              require('@/assets/images/works/portfolio-v2/portfolio3.jpg'),
             ],
             name: 'My Portfolio with CSS Animation',
             url: 'https://suige.gripics.com/',
@@ -92,10 +91,7 @@
           {
             id: 'cavancle',
             images: [
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
+              require('@/assets/images/works/cavancle/cavancle1.jpg'),
             ],
             name: 'CAVANCLE',
             url: '',
@@ -107,10 +103,9 @@
           {
             id: 'my-friends-blog',
             images: [
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
-              require('@/assets/images/works/sample.jpg'),
+              require('@/assets/images/works/my-friends-blog/blog1.jpg'),
+              require('@/assets/images/works/my-friends-blog/blog2.jpg'),
+              require('@/assets/images/works/my-friends-blog/blog3.jpg'),
             ],
             name: 'My Friend\'s Blog',
             url: 'https://www.changami.com/',
@@ -216,7 +211,7 @@
       overflow-x: scroll;
       transition: all .2s;
       @include pc-work-layout {
-        padding-left: calc(35% + #{$spacer*4});
+        padding-left: calc(48%);
       }
       @include sp-layout {
         transform: none!important;
@@ -230,7 +225,8 @@
       }
 
       &-image {
-        width: 280px;
+        width: 68%;
+        max-width: 280px;
         margin: 0 $spacer;
         display: inline-block;
       }
@@ -244,13 +240,15 @@
 
     .content {
       background-color: $body-color;
-      padding: $spacer $spacer*2;
+      padding: 0 0 $spacer*3;
 
       @include pc-work-layout {
-        width: 35%;
+        width: 48%;
         position: absolute;
-        bottom: 20%;
-        left: $spacer;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        padding: $spacer $spacer*2 $spacer*2;
       }
 
       h3 {

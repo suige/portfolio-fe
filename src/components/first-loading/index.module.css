@@ -1,0 +1,134 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  -webkit-transform: translateZ(999px);
+  background-color: rgb(var(--background-end-rgb));
+  animation: fadeout 1s 4.5s forwards;
+}
+
+.wall1,
+.wall2,
+.wall3 {
+  background-color: rgb(var(--foreground-rgb));
+  height: calc(100% / 3);
+  width: 0;
+}
+
+.wall1 {
+  margin-left: auto;
+  animation: slide1 0.5s 1s forwards;
+}
+
+.wall2 {
+  animation: slide1 0.5s 1.3s forwards;
+}
+
+.wall3 {
+  margin-left: auto;
+  animation: slide1 0.5s 1.6s forwards;
+}
+
+.border {
+  width: 94%;
+  height: 94%;
+  margin: 2%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 5px dashed rgb(var(--background-end-rgb));
+}
+
+.border p {
+  margin: 6vh auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--font-family-h);
+  font-size: 3.4rem;
+  color: rgb(var(--background-end-rgb));
+}
+
+.rabbit {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  fill: red;
+}
+
+.rabbit svg {
+  width: 120px;
+  height: auto;
+  fill: rgb(var(--foreground-rgb));
+  animation: shake 0.1s 6 0.3s alternate, appear 1s 2.4s forwards,
+    big 1s 4s forwards;
+}
+
+@keyframes slide1 {
+  100% {
+    width: 100vw;
+  }
+}
+
+@keyframes slide1 {
+  100% {
+    width: 100vw;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotateZ(-5deg);
+  }
+  100% {
+    transform: rotateZ(5deg);
+  }
+}
+
+@keyframes appear {
+  0% {
+    fill: rgb(var(--background-end-rgb));
+    transform: scale(0);
+  }
+  40% {
+    fill: rgb(var(--background-end-rgb));
+    transform: scale(1.3);
+  }
+  100% {
+    fill: rgb(var(--background-end-rgb));
+    transform: scale(1);
+  }
+}
+
+@keyframes big {
+  50% {
+    width: 100vmax;
+  }
+  100% {
+    width: 100vmax;
+    transform: scale(3);
+  }
+}
+
+@keyframes fadeout {
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading-enter-active,
+.loading-leave-active {
+  transition: all 0.2s;
+}
+
+.loading-enter,
+.loading-leave-to {
+  opacity: 0;
+}

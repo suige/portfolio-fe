@@ -1,4 +1,13 @@
 :root {
+  --size-1: 8px;
+  --size-2: 16px;
+  --size-3: 24px;
+  --size-4: 32px;
+  --size-5: 40px;
+  --font-size-sm: 12px;
+  --font-size-md: 16px;
+  --font-size-lg: 28px;
+  --font-size-xl: 32px;
   --font-family: var(--font-rubik), sans-serif;
   --font-family-h: var(--font-wendy-one), sans-serif;
   --max-width: 1100px;
@@ -36,7 +45,7 @@
     #00000080
   );
 
-  --callout-rgb: 238, 240, 241;
+  --callout-rgb: 248, 54, 110;
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
@@ -96,15 +105,109 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 a {
-  color: inherit;
+  color: rgb(var(--callout-rgb));
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-h);
+}
+h1 {
+  font-size: var(--font-size-xl);
+}
+h2 {
+  font-size: var(--font-size-lg);
+}
+h3 {
+  font-size: var(--font-size-md);
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+.globalNav {
+  font-family: var(--font-family-h);
+  width: 100%;
+  padding: var(--size-3) var(--size-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  /* @include sp-layout {
+    padding: $spacer * 3 $width-space-sp 0;
+  } */
+}
+
+.globalNav ul {
+  display: flex;
+  align-items: baseline;
+  gap: var(--size-2);
+  list-style: none;
+  /* @include pc-layout {
+      flex-direction: row;
+    }
+    @include sp-layout {
+      flex-direction: column;
+      align-items: flex-end;
+    } */
+}
+
+.globalNav li {
+  flex: 0 1 auto;
+  margin-bottom: 10px;
+  list-style: none;
+
+  /* @include pc-layout {
+    padding: 0 0.5em;
+  } */
+}
+
+.container {
+  max-width: 1200px;
+  border-left: 4vw solid rgb(var(--foreground-rgb));
+  position: relative;
+  /* @include sp-layout {
+    padding: $spacer * 2 $width-space-sp + 1 $spacer * 2 $width-space-sp;
+  }
+  @include pc-layout {
+    padding: $spacer * 3 12vw $spacer * 3 $spacer * 5;
+    margin-right: 12vw;
+  } */
+}
+
+footer {
+  margin: 0;
+  padding: var(--size-1) 0;
+  /* @include pc-layout {
+    position: fixed;
+    right: 0;
+    top: 40%;
+    text-align: right;
+  } */
+}
+footer .copyright {
+  /* @include pc-layout {
+    transform-origin: 50% 50%;
+    transform: rotateZ(90deg) translateX(5rem);
+    display: inline-block;
+    color: $body-color;
+  } */
+  text-align: center;
+  margin: 0;
+  font-size: var(--font-size-sm);
 }

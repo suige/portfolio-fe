@@ -1,3 +1,5 @@
+'use client';
+
 import { memo, useEffect, useState } from 'react';
 import styles from './index.module.css';
 import Logo from './logo';

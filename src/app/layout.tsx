@@ -1,11 +1,11 @@
-import { FirstLoading } from '@/components/first-loading';
+import { FirstLoading } from '@/app/components/first-loading';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Rubik, Wendy_One } from 'next/font/google';
-import { BackgroundStars } from '@/components/background-stars';
+import { BackgroundStars } from '@/app/components/background-stars';
 import Link from 'next/link';
-import { Logo } from '@/components/logo';
-import { GlobalNavLink } from '@/components/global-nav-link';
+import { Logo } from '@/app/components/logo';
+import { GlobalNavLink } from '@/app/components/global-nav-link';
 
 const rubik = Rubik({
   subsets: ['latin'],

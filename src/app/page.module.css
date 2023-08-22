@@ -1,0 +1,47 @@
+.main {
+  padding: 0 var(--size-2);
+}
+
+.title {
+  color: rgb(var(--background-end-rgb));
+  line-height: 1.2em;
+  letter-spacing: 2px;
+  margin: var(--size-3) 0;
+  text-shadow: 1px 1px 0 rgb(var(--foreground-rgb)),
+    -1px 1px 0 rgb(var(--foreground-rgb)), 1px -1px 0 rgb(var(--foreground-rgb)),
+    -1px -1px 0 rgb(var(--foreground-rgb)), 5px 3px 0 rgb(var(--foreground-rgb));
+  font-size: 5vw;
+  white-space: nowrap;
+}
+.title span {
+  display: inline-block;
+}
+.title span.space {
+  width: 0.2em;
+}
+.title span:nth-child(1) {
+  transform: rotate(-10deg);
+}
+
+.subTitle {
+  font-family: var(--font-family-h);
+  color: rgb(var(--foreground-rgb));
+  margin-top: 0;
+  font-size: 3.6rem;
+  letter-spacing: 2px;
+}
+.subTitle span {
+  letter-spacing: 0;
+  font-size: 0.7em;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 28px;
+    white-space: pre-wrap;
+  }
+  .subTitle {
+    font-size: 24px;
+  }
+}

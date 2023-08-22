@@ -1,0 +1,25 @@
+.main {
+  padding: 0 var(--size-2);
+}
+
+.title {
+  margin: var(--size-3) 0;
+}
+
+.email {
+  display: inline-block;
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: var(--font-size-md);
+  margin-top: var(--size-3);
+}
+
+.imageWrapper {
+  width: 80vw;
+  max-width: 700px;
+}
+
+.imageWrapper svg {
+  width: 100%;
+  height: auto;
+}

@@ -4,7 +4,6 @@
   text-transform: uppercase;
   line-height: 2em;
   font-weight: bold;
-  font-size: 2rem;
   font-family: var(--font-family-h);
   cursor: pointer;
   outline: none;
@@ -14,6 +13,7 @@
   position: relative;
   background: var(--body-color);
   z-index: 5;
+  margin: 8px;
 }
 .link.hover::after {
   content: '';
@@ -39,16 +39,16 @@
   left: -50%;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url('../../assets/images/spark-1.svg');
+  background-image: url('./spark-1.svg');
   animation: scaleup 0.3s forwards;
 }
 
 @keyframes sparkle {
   0% {
-    background-image: url('../../assets/images/spark-1.svg');
+    background-image: url('./spark-1.svg');
   }
   50% {
-    background-image: url('../../assets/images/spark-2.svg');
+    background-image: url('./spark-2.svg');
   }
 }
 

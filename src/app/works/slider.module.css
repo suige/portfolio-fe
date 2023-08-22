@@ -1,0 +1,67 @@
+.sliderControl {
+  text-align: right;
+  display: block;
+}
+.sliderControl button {
+  border: none;
+  background-color: rgb(var(--foreground-rgb));
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sliderControl button:focus,
+.sliderControl button:active {
+  box-shadow: 0 0 0 2px rgb(var(--foreground-rgb));
+}
+
+.sliderControl button:disabled {
+  background-color: rgb(var(--foreground-rgb));
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.sliderControl button svg {
+  width: 10px;
+  height: 10px;
+  fill: rgb(var(--background-end-rgb));
+}
+
+.sliderControl .sliderRight,
+.sliderControl .sliderLeft {
+  display: inline-block;
+  margin-left: var(--size-1);
+}
+
+.sliderWrapper {
+  overflow: hidden;
+}
+
+.slider {
+  padding-top: var(--size-1);
+  padding-bottom: var(--size-1);
+  white-space: nowrap;
+  overflow-x: scroll;
+  transition: all 0.2s;
+}
+
+.slider::-webkit-scrollbar {
+  display: none !important;
+}
+
+.sliderImage {
+  max-width: 280px;
+  margin: 0 var(--size-1);
+  display: inline-block;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 var(--size-1) 1px rgba(var(--foreground-rgb), 0.3);
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

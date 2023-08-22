@@ -1,0 +1,7 @@
+.main {
+  padding: 0 var(--size-2);
+}
+
+.title {
+  margin: var(--size-3) 0;
+}

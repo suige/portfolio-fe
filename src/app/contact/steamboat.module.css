@@ -1,0 +1,83 @@
+.cls1 {
+  fill: #c6c6c6;
+}
+
+.cls2 {
+  fill: #e8e8e8;
+}
+
+.cls3 {
+  fill: #2d2d2d;
+}
+
+.cls4 {
+  fill: #fff;
+}
+
+.cls5 {
+  fill: #1c1c1c;
+}
+
+#wheel {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: 10s spin linear infinite;
+}
+#smokeMayo {
+  transform-origin: 50% 100%;
+  transform-box: fill-box;
+  animation: 6s smoke infinite;
+}
+#smokeSoysause {
+  transform-origin: 50% 100%;
+  transform-box: fill-box;
+  animation: 6s smoke infinite 1s;
+}
+#mayo {
+  transform-origin: 50% 100%;
+  transform-box: fill-box;
+  animation: 6s before-smoke infinite;
+}
+#soysause {
+  transform-origin: 50% 100%;
+  transform-box: fill-box;
+  animation: 6s before-smoke infinite 1s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes smoke {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  10% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20%,
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes before-smoke {
+  0% {
+    transform: scaleY(0.8);
+  }
+  5%,
+  100% {
+    transform: scaleY(1);
+  }
+}

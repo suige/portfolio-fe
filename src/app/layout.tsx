@@ -22,8 +22,14 @@ const wendy_one = Wendy_One({
 });
 
 export const metadata: Metadata = {
-  title: 'Kaori Portfolio',
+  title: {
+    default: "Kaori's Portfolio",
+    template: "%s | Kaori's Portfolio",
+  },
   description: 'I am Kaori, Software engineer.',
+  openGraph: {
+    images: '/img/ogp.png',
+  },
 };
 
 export default function RootLayout({

@@ -5,6 +5,9 @@ import styles from './index.module.css';
 import Logo from './logo';
 
 const FirstLoading = memo(() => {
+  const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const reduceAnimation = !mediaQuery || mediaQuery.matches;
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -12,6 +15,10 @@ const FirstLoading = memo(() => {
       setIsLoading(false);
     }, 5500);
   }, []);
+
+  if (reduceAnimation) {
+    return <></>;
+  }
 
   if (!isLoading) {
     return <></>;

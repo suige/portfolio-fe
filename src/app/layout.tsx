@@ -1,5 +1,6 @@
 import { FirstLoading } from '@/app/components/first-loading';
 import './globals.css';
+import styles from './layout.module.css';
 import type { Metadata } from 'next';
 import { Rubik, Wendy_One } from 'next/font/google';
 import { BackgroundStars } from '@/app/components/background-stars';
@@ -32,9 +33,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${rubik.variable} ${wendy_one.variable}`}>
-      <body>
-        <header>
-          <nav className="globalNav">
+      <body className={styles.body}>
+        <header className={styles.header}>
+          <nav className={styles.globalNav}>
             <Link href="/">
               <Logo />
             </Link>
@@ -52,9 +53,9 @@ export default function RootLayout({
             </ul>
           </nav>
         </header>
-        <div className="container">{children}</div>
-        <footer>
-          <p className="copyright">&copy; Kaori</p>
+        <div className={styles.container}>{children}</div>
+        <footer className={styles.footer}>
+          <p className={styles.copyright}>&copy; Kaori</p>
         </footer>
         <FirstLoading />
         <BackgroundStars />

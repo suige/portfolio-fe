@@ -10,12 +10,17 @@
   align-content: center;
   padding: 0 var(--size-5);
 }
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 var(--size-3);
+  }
+}
 .globalNav {
   font-family: var(--font-family-h);
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 }
 
 .globalNav ul {
@@ -27,14 +32,15 @@
 
 .globalNav li {
   flex: 0 1 auto;
-  margin-bottom: 10px;
   list-style: none;
 }
 
 .container {
   grid-area: main;
   max-width: 1200px;
-  border-left: 4vw solid rgb(var(--foreground-rgb));
+  margin-left: auto;
+  margin-right: auto;
+  /* border-left: 4vw solid rgb(var(--foreground-rgb)); */
   position: relative;
 }
 

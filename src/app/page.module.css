@@ -27,13 +27,17 @@
   font-family: var(--font-family-h);
   color: rgb(var(--foreground-rgb));
   margin-top: 0;
-  font-size: 3.6rem;
+  font-size: var(--font-size-xl);
   letter-spacing: 2px;
 }
 .subTitle span {
   letter-spacing: 0;
   font-size: 0.7em;
   white-space: nowrap;
+}
+
+.description {
+  margin: var(--size-3) 0;
 }
 
 @media screen and (max-width: 768px) {

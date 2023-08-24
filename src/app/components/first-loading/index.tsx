@@ -3,15 +3,28 @@
 import { memo, useEffect, useState } from 'react';
 import styles from './index.module.css';
 import Logo from './logo';
+import Cookies from 'js-cookie';
+import { DISABLED_ANIMATION_COOKIE_NAME } from './const';
 
 const FirstLoading = memo(() => {
+  const [reduceAnimation, setReduceAnimation] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const mediaQuery = window?.matchMedia('(prefers-reduced-motion: reduce)');
+    setReduceAnimation(!mediaQuery || mediaQuery.matches);
     setTimeout(() => {
       setIsLoading(false);
     }, 5500);
+
+    if (Cookies.get(DISABLED_ANIMATION_COOKIE_NAME) !== 'true') {
+      Cookies.set(DISABLED_ANIMATION_COOKIE_NAME, 'true', { expires: 3 });
+    }
   }, []);
+
+  if (reduceAnimation) {
+    return <></>;
+  }
 
   if (!isLoading) {
     return <></>;

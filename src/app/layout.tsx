@@ -1,11 +1,14 @@
 import { FirstLoading } from '@/app/components/first-loading';
+import { DISABLED_ANIMATION_COOKIE_NAME } from '@/app/components/first-loading/const';
 import './globals.css';
+import styles from './layout.module.css';
 import type { Metadata } from 'next';
 import { Rubik, Wendy_One } from 'next/font/google';
 import { BackgroundStars } from '@/app/components/background-stars';
 import Link from 'next/link';
 import { Logo } from '@/app/components/logo';
 import { GlobalNavLink } from '@/app/components/global-nav-link';
+import { cookies } from 'next/headers';
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -21,8 +24,14 @@ const wendy_one = Wendy_One({
 });
 
 export const metadata: Metadata = {
-  title: 'Kaori Portfolio',
+  title: {
+    default: "Kaori's Portfolio",
+    template: "%s | Kaori's Portfolio",
+  },
   description: 'I am Kaori, Software engineer.',
+  openGraph: {
+    images: '/img/ogp.png',
+  },
 };
 
 export default function RootLayout({
@@ -30,11 +39,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const disabledLoadingAnimation = cookies().get(
+    DISABLED_ANIMATION_COOKIE_NAME
+  )?.value;
+
   return (
     <html lang="en" className={`${rubik.variable} ${wendy_one.variable}`}>
-      <body>
-        <header>
-          <nav className="globalNav">
+      <body className={styles.body}>
+        <header className={styles.header}>
+          <nav className={styles.globalNav}>
             <Link href="/">
               <Logo />
             </Link>
@@ -52,11 +65,11 @@ export default function RootLayout({
             </ul>
           </nav>
         </header>
-        <div className="container">{children}</div>
-        <footer>
-          <p className="copyright">&copy; Kaori</p>
+        <div className={styles.container}>{children}</div>
+        <footer className={styles.footer}>
+          <p className={styles.copyright}>&copy; Kaori</p>
         </footer>
-        <FirstLoading />
+        {disabledLoadingAnimation === 'true' ? <></> : <FirstLoading />}
         <BackgroundStars />
       </body>
     </html>

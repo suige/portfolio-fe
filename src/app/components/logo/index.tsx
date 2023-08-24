@@ -1,12 +1,13 @@
 import { memo } from 'react';
 import styles from './index.module.css';
-import logo from './logo.svg';
-import Image from 'next/image';
+import { Logo as LogoIcon } from './logo';
 
 const Logo = memo(() => {
   return (
     <div className={styles.titleWrap}>
-      <Image src={logo} alt="" className={styles.logo} />
+      <div className={styles.logo}>
+        <LogoIcon />
+      </div>
       <div className={styles.title}>
         <span>k</span>
         <span>a</span>

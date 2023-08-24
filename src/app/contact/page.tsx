@@ -1,5 +1,10 @@
 import styles from './page.module.css';
 import { Steamboat } from './steamboat';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact',
+};
 
 export default function Contact() {
   return (

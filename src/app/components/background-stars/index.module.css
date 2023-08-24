@@ -12,8 +12,7 @@
   display: inline-block;
   color: rgb(var(--foreground-rgb));
   font-size: 18px;
-  animation: fadeout 3s ease-out 2s alternate infinite;
-  opacity: 0;
+  opacity: 0.1;
 }
 .star:nth-child(1) {
   left: 10px;
@@ -64,6 +63,12 @@
   right: 20%;
   top: 25%;
   animation-duration: 1.6s;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .star {
+    animation: fadeout 3s ease-out 2s alternate infinite;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {

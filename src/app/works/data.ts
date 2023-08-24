@@ -26,7 +26,7 @@ const vanquestion: Project = {
 };
 
 const portfolio: Project = {
-  id: 'portfolio-v2',
+  id: 'portfolio',
   name: 'My Portfolio with CSS Animation',
   url: 'https://suige.gripics.com/',
   github: 'https://github.com/suige/portfolio-v2',

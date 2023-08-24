@@ -112,6 +112,7 @@ body {
 }
 
 a {
+  display: inline-block;
   color: rgb(var(--callout-rgb));
   text-decoration: none;
   text-transform: uppercase;

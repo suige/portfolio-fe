@@ -11,8 +11,6 @@
   border: none;
   border-radius: 2rem;
   position: relative;
-  background: var(--body-color);
-  z-index: 5;
   margin: 8px;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -44,6 +42,13 @@
     animation: scaleup 0.3s forwards;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .link.hover::after,
+  .link.click::after {
+    filter: brightness(100);
+  }
+}
+
 @keyframes sparkle {
   0% {
     background-image: url('./spark-1.svg');

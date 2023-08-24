@@ -1,5 +1,7 @@
 .titleWrap {
   position: relative;
+  display: inline-flex;
+  align-items: center;
 }
 .title {
   display: inline-block;
@@ -9,8 +11,8 @@
 }
 .logo {
   display: inline-block;
-  width: auto;
-  height: 26px;
+  width: 26px;
+  height: auto;
   vertical-align: bottom;
 }
 @media (prefers-reduced-motion: no-preference) {

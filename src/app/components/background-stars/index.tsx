@@ -13,4 +13,6 @@ const BackgroundStars = memo(() => {
   );
 });
 
+BackgroundStars.displayName = 'BackgroundStars';
+
 export { BackgroundStars };

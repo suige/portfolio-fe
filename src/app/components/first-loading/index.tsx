@@ -45,4 +45,6 @@ const FirstLoading = memo(() => {
   );
 });
 
+FirstLoading.displayName = 'FirstLoading';
+
 export { FirstLoading };

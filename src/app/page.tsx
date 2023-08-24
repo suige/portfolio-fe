@@ -16,7 +16,9 @@ export default function Home() {
           </span>
         ))}
       </h1>
-      <p className={styles.subTitle}>I'm a Software Engineer, Frontend(Web).</p>
+      <p className={styles.subTitle}>
+        I&lsquo;m a Software Engineer, Frontend(Web).
+      </p>
       <div className={styles.description}>
         <p>Frontend Web Engineer with 5+ years of experience.</p>
         <p>
@@ -25,7 +27,7 @@ export default function Home() {
         </p>
         <p>
           Kaori stays on top of new front-end technology trends because I always
-          explore the best ways to improve the client's experience.
+          explore the best ways to improve the client&lsquo;s experience.
         </p>
         <p>
           If you get interested me, please{' '}

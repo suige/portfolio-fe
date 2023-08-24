@@ -19,4 +19,6 @@ const Logo = memo(() => {
   );
 });
 
+Logo.displayName = 'Logo';
+
 export { Logo };

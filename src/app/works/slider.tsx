@@ -45,7 +45,7 @@ const Slider = ({
           // :style="slideTranslateX(index)"
         >
           {images.map((img) => (
-            <div className={styles.sliderImage}>
+            <div className={styles.sliderImage} key={img}>
               <Image
                 src={`/img/works/${projectId}/${img}`}
                 alt=""

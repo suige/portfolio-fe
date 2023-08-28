@@ -47,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${rubik.variable} ${wendy_one.variable}`}>
       <body className={styles.body}>
+        {disabledLoadingAnimation === 'true' ? <></> : <FirstLoading />}
         <header className={styles.header}>
           <nav className={styles.globalNav}>
             <Link href="/">
@@ -71,7 +72,6 @@ export default function RootLayout({
           <div className={styles.copyright}>&copy; Kaori</div>
           <SocialLinks />
         </footer>
-        {disabledLoadingAnimation === 'true' ? <></> : <FirstLoading />}
         <BackgroundStars />
       </body>
     </html>

@@ -1,0 +1,19 @@
+.socialLinks {
+  display: grid;
+  list-style: none;
+}
+
+.socialLink {
+  list-style: none;
+}
+
+.socialLink a {
+  width: 32px;
+  color: rgb(var(--foreground-rgb));
+}
+
+.socialLink svg,
+.socialLink img {
+  width: 100%;
+  height: auto;
+}

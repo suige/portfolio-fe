@@ -18,6 +18,13 @@
   --background-end-rgb: 255, 255, 255;
 
   --callout-rgb: 248, 54, 110;
+  --global-padding: var(--size-5);
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --global-padding: var(--size-3);
+  }
 }
 
 @media (prefers-color-scheme: dark) {

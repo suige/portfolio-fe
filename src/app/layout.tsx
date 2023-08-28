@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { Logo } from '@/app/components/logo';
 import { GlobalNavLink } from '@/app/components/global-nav-link';
 import { cookies } from 'next/headers';
+import { SocialLinks } from './components/social-links';
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -67,7 +68,8 @@ export default function RootLayout({
         </header>
         <div className={styles.container}>{children}</div>
         <footer className={styles.footer}>
-          <p className={styles.copyright}>&copy; Kaori</p>
+          <div className={styles.copyright}>&copy; Kaori</div>
+          <SocialLinks />
         </footer>
         {disabledLoadingAnimation === 'true' ? <></> : <FirstLoading />}
         <BackgroundStars />

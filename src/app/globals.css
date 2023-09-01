@@ -4,10 +4,11 @@
   --size-3: 24px;
   --size-4: 32px;
   --size-5: 40px;
-  --font-size-sm: 12px;
-  --font-size-md: 16px;
-  --font-size-lg: 28px;
-  --font-size-xl: 32px;
+  --font-size-sm: clamp(0.75rem, 2vw, 1rem);
+  --font-size-md: clamp(1rem, 4vw, 1.35rem);
+  --font-size-lg: clamp(1.5rem, 6vw, 2.5rem);
+  --font-size-xl: clamp(2rem, 9vw, 3.5rem);
+  --font-body: var(--font-size-md);
   --header-height: 100px;
   --font-family: var(--font-rubik), sans-serif;
   --font-family-h: var(--font-wendy-one), sans-serif;
@@ -89,6 +90,7 @@ h3 {
 }
 
 p {
+  font-size: var(--font-body);
   line-height: 1.75;
 }
 

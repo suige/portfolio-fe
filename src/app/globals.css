@@ -4,21 +4,36 @@
   --size-3: 24px;
   --size-4: 32px;
   --size-5: 40px;
-  --font-size-sm: 12px;
-  --font-size-md: 16px;
-  --font-size-lg: 28px;
-  --font-size-xl: 32px;
+
+  --radius: 18px;
+
+  --font-size-sm: clamp(0.85rem, 3.5vw, 1.2rem);
+  --font-size-md: clamp(1rem, 4vw, 1.35rem);
+  --font-size-lg: clamp(1.5rem, 6vw, 2.5rem);
+  --font-size-xl: clamp(2rem, 9vw, 3.5rem);
+  --font-body: var(--font-size-md);
   --header-height: 100px;
   --font-family: var(--font-rubik), sans-serif;
   --font-family-h: var(--font-wendy-one), sans-serif;
   --max-width: 1100px;
 
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: 18, 18, 18;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
   --callout-rgb: 248, 54, 110;
+  --card-background-rgb: 246, 245, 244;
+  --card-foreground-rgb: 18, 18, 18;
   --global-padding: var(--size-5);
+
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+  --shadow: 0 -1px 3px 0 hsl(var(--shadow-color) /
+          calc(var(--shadow-strength) + 2%)),
+    0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
 }
 
 @media screen and (max-width: 768px) {
@@ -34,6 +49,11 @@
     --background-end-rgb: 0, 0, 0;
 
     --callout-rgb: 248, 54, 110;
+    --card-background-rgb: 246, 245, 244;
+    --card-foreground-rgb: 18, 18, 18;
+
+    --shadow-color: 220 40% 2%;
+    --shadow-strength: 25%;
   }
 }
 
@@ -89,7 +109,12 @@ h3 {
 }
 
 p {
+  font-size: var(--font-body);
   line-height: 1.75;
+}
+
+p + p {
+  margin-top: 1em;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -2,7 +2,7 @@
 import { Header } from './header';
 import { Container } from './container';
 import styles from './index.module.css';
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useRef, useEffect } from 'react';
 
 interface Props {
   initMessages: any[];
@@ -22,13 +22,24 @@ const Chatbot = ({ initMessages, steps }: Props) => {
     },
     [messages, steps]
   );
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        top:
+          containerRef.current.scrollHeight - containerRef.current.clientHeight,
+        behavior: 'smooth',
+      });
+    }
+  }, [messages.length]);
 
   return (
     <div className={styles.chatbot}>
       <div className={styles.header}>
         <Header />
       </div>
-      <div className={styles.container}>
+      <div className={styles.container} ref={containerRef}>
         <Container messages={messages} setMessage={handleSetMessage} />
       </div>
     </div>

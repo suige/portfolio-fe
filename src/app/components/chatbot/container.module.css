@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  align-content: baseline;
+  gap: var(--size-2);
+}
+
+.bot {
+  max-width: 90%;
+  margin-right: auto;
+}
+
+.user {
+  max-width: 90%;
+  margin-left: auto;
+}

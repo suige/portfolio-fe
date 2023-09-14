@@ -17,6 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    isActive: true,
     initMessages: [
       {
         type: 'text',

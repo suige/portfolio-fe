@@ -1,0 +1,23 @@
+.chatbot {
+  background-color: rgb(255, 255, 255);
+  width: 360px;
+  max-width: 100%;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+
+.header {
+  background-color: rgb(var(--card-foreground-rgb));
+  color: rgb(var(--card-background-rgb));
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: var(--size-2);
+}
+
+.container {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: var(--size-2);
+  height: 400px;
+  overflow-y: scroll;
+}

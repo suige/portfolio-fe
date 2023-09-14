@@ -1,0 +1,12 @@
+.bubble {
+  background: rgb(var(--card-background-rgb));
+  box-shadow: rgb(var(--shadow));
+  padding: var(--size-2) var(--size-2);
+  font-size: var(--font-size-bot);
+  color: rgb(var(--card-foreground-rgb));
+  border-radius: 32px;
+}
+.user {
+  background: rgb(var(--card-foreground-rgb));
+  color: rgb(var(--card-background-rgb));
+}

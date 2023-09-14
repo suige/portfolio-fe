@@ -1,0 +1,17 @@
+.button {
+  background: rgb(var(--card-background-rgb));
+  padding: var(--size-1) var(--size-2);
+  font-size: var(--font-size-bot);
+  color: rgb(var(--card-foreground-rgb));
+  border-radius: 32px;
+  border: 1px solid rgb(var(--card-foreground-rgb));
+  cursor: pointer;
+  min-inline-size: fit-content;
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button:hover {
+    opacity: 0.6;
+  }
+}

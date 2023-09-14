@@ -1,0 +1,6 @@
+.options {
+  display: flex;
+  gap: var(--size-1);
+  flex-wrap: wrap;
+  justify-content: end;
+}

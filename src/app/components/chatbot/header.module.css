@@ -1,0 +1,7 @@
+.header {
+  font-size: var(--font-size-bot);
+  display: grid;
+  grid-template-columns: 32px auto;
+  gap: 4px;
+  align-items: center;
+}

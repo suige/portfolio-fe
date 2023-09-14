@@ -11,16 +11,39 @@ interface Props {
 
 const Chatbot = ({ initMessages, steps }: Props) => {
   const [messages, setMessages] = useState(initMessages);
+
   const handleSetMessage = useCallback(
     (trigger: string) => {
       const next = steps[trigger];
       if (next) {
-        setMessages([...messages, steps[trigger]]);
+        setMessages([...messages, next]);
       } else {
         // TODO: End or Error
       }
     },
     [messages, steps]
+  );
+
+  const handleCurrentSelectOption = useCallback(
+    (value: number) => {
+      const temp = [...messages];
+      const { id, options } = temp.pop();
+      const selectedOption = options.find((o: any) => o.value === value);
+
+      setMessages([
+        ...temp,
+        {
+          id,
+          message: selectedOption.label,
+          trigger: selectedOption.trigger,
+          user: true,
+        },
+      ]);
+      setTimeout(() => {
+        handleSetMessage(selectedOption.trigger);
+      }, 1000);
+    },
+    [messages, handleSetMessage]
   );
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -40,7 +63,11 @@ const Chatbot = ({ initMessages, steps }: Props) => {
         <Header />
       </div>
       <div className={styles.container} ref={containerRef}>
-        <Container messages={messages} setMessage={handleSetMessage} />
+        <Container
+          messages={messages}
+          setMessage={handleSetMessage}
+          selectOption={handleCurrentSelectOption}
+        />
       </div>
     </div>
   );

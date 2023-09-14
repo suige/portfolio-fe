@@ -28,14 +28,17 @@ export const Default: Story = {
         id: '3',
         options: [
           {
+            value: 1,
             label: 'Just Saying Hello!',
             trigger: '4',
           },
           {
+            value: 2,
             label: 'We would like to hire you!',
             trigger: '5',
           },
           {
+            value: 3,
             label: 'Who are you...?',
             trigger: '6',
           },

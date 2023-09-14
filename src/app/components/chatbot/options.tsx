@@ -3,16 +3,16 @@ import { Button } from './button';
 import styles from './options.module.css';
 
 interface Props {
-  options: { label: string; trigger: string }[];
-  setMessage: (trigger: string) => void;
+  options: { label: string; trigger: string; value: number }[];
+  selectOption: (value: number) => void;
 }
 
-const Options = ({ options, setMessage }: Props) => {
+const Options = ({ options, selectOption }: Props) => {
   const handleClick = useCallback(
-    (trigger: string) => {
-      setMessage(trigger);
+    (value: number) => {
+      selectOption(value);
     },
-    [setMessage]
+    [selectOption]
   );
 
   return (
@@ -20,7 +20,7 @@ const Options = ({ options, setMessage }: Props) => {
       {options.map((o, index) => (
         <Button
           label={o.label}
-          onClick={() => handleClick(o.trigger)}
+          onClick={() => handleClick(o.value)}
           key={index}
         />
       ))}

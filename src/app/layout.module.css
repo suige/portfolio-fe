@@ -45,11 +45,11 @@
   padding: var(--size-1) var(--global-padding);
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: end;
+  justify-items: center;
   gap: var(--size-1);
 }
 .footer .copyright {
   text-align: center;
   margin: 0;
-  font-size: var(--font-size-sm);
+  font-size: 14px;
 }

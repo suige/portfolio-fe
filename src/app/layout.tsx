@@ -71,7 +71,6 @@ export default function RootLayout({
         <div className={styles.container}>{children}</div>
         <footer className={styles.footer}>
           <div className={styles.copyright}>&copy; Kaori</div>
-          <SocialLinks />
         </footer>
         <Chat />
         <BackgroundStars />

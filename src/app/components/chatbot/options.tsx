@@ -1,9 +1,10 @@
 import { useCallback } from 'react';
 import { Button } from './button';
 import styles from './options.module.css';
+import { OptionsStep } from './type';
 
 interface Props {
-  options: { label: string; trigger: string; value: number }[];
+  options: OptionsStep['options'];
   selectOption: (value: number) => void;
 }
 

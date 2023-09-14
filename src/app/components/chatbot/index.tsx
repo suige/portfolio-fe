@@ -3,10 +3,11 @@ import { Header } from './header';
 import { Container } from './container';
 import styles from './index.module.css';
 import { useCallback, useState, useRef, useEffect } from 'react';
+import { Message, Steps, TextStep } from './type';
 
 interface Props {
-  initMessages: any[];
-  steps: Record<string, any>;
+  initMessages: Message[];
+  steps: Steps;
 }
 
 const Chatbot = ({ initMessages, steps }: Props) => {
@@ -27,18 +28,23 @@ const Chatbot = ({ initMessages, steps }: Props) => {
   const handleCurrentSelectOption = useCallback(
     (value: number) => {
       const temp = [...messages];
-      const { id, options } = temp.pop();
-      const selectedOption = options.find((o: any) => o.value === value);
+      const m = temp.pop();
 
-      setMessages([
-        ...temp,
-        {
-          id,
-          message: selectedOption.label,
-          trigger: selectedOption.trigger,
-          user: true,
-        },
-      ]);
+      if (m?.type !== 'options') return;
+
+      const selectedOption = m.options.find((o: any) => o.value === value);
+
+      if (!selectedOption) return;
+
+      const newTextStep: TextStep = {
+        type: 'text',
+        id: m.id,
+        message: selectedOption.label,
+        trigger: selectedOption.trigger,
+        user: true,
+      };
+
+      setMessages([...temp, newTextStep]);
       setTimeout(() => {
         handleSetMessage(selectedOption.trigger);
       }, 1000);
@@ -57,6 +63,7 @@ const Chatbot = ({ initMessages, steps }: Props) => {
     }
   }, [messages.length]);
 
+  // ここにボタンで表示をいれるから、ステップの制御は別のコンポーネント作る
   return (
     <div className={styles.chatbot}>
       <div className={styles.header}>

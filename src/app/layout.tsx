@@ -10,7 +10,7 @@ import { Logo } from '@/app/components/logo';
 import { GlobalNavLink } from '@/app/components/global-nav-link';
 import { cookies } from 'next/headers';
 import { SocialLinks } from './components/social-links';
-import { ChatIcon } from './components/icons';
+import { Chat } from './layout/chat';
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -73,9 +73,7 @@ export default function RootLayout({
           <div className={styles.copyright}>&copy; Kaori</div>
           <SocialLinks />
         </footer>
-        <button className={styles.chatButton}>
-          <ChatIcon />
-        </button>
+        <Chat />
         <BackgroundStars />
       </body>
     </html>

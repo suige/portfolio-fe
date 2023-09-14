@@ -1,11 +1,30 @@
 import Image from 'next/image';
 import styles from './header.module.css';
+import { CrossIcon } from '../icons';
 
-const Header = () => {
+interface Props {
+  handleClose?: () => void;
+}
+const Header = ({ handleClose }: Props) => {
   return (
     <div className={styles.header}>
-      <Image src="/img/icon-kaorios.png" width={32} height={32} alt="" />
-      <div>Kaori Bot</div>
+      <div className={styles.headerContent}>
+        <Image
+          src="/img/icon-kaorios.png"
+          width={38}
+          height={38}
+          alt=""
+          className={styles.icon}
+        />
+        <div>Kaori Bot</div>
+      </div>
+      {handleClose ? (
+        <button className={styles.closeButton} onClick={handleClose}>
+          <CrossIcon />
+        </button>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

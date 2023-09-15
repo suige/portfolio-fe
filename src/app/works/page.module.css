@@ -5,3 +5,21 @@
 .title {
   margin: var(--size-3) 0;
 }
+.workList {
+  display: grid;
+  gap: var(--size-3);
+  margin-bottom: var(--size-6);
+}
+
+.featuredWork {
+  background: rgb(var(--card-background-rgb));
+  color: rgb(var(--card-foreground-rgb));
+  border-radius: var(--radius);
+  padding: var(--size-5);
+}
+
+@media screen and (max-width: 768px) {
+  .featuredWork {
+    padding: var(--size-1) var(--size-2);
+  }
+}

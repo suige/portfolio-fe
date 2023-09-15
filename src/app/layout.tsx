@@ -50,22 +50,18 @@ export default function RootLayout({
       <body className={styles.body}>
         {disabledLoadingAnimation === 'true' ? <></> : <FirstLoading />}
         <header className={styles.header}>
+          <Link href="/">
+            <Logo />
+          </Link>
           <nav className={styles.globalNav}>
-            <Link href="/">
-              <Logo />
-            </Link>
             <ul>
               <li>
                 <GlobalNavLink href="/works" title="works">
                   works
                 </GlobalNavLink>
               </li>
-              <li>
-                <GlobalNavLink href="/contact" title="contact">
-                  contact
-                </GlobalNavLink>
-              </li>
             </ul>
+            <SocialLinks />
           </nav>
         </header>
         <div className={styles.container}>{children}</div>

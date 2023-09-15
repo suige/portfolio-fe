@@ -1,7 +1,28 @@
 .header {
   font-size: var(--font-size-bot);
   display: grid;
-  grid-template-columns: 32px auto;
+  grid-template-columns: auto 32px;
   gap: 4px;
+  align-items: center;
+}
+
+.icon {
+  border-radius: 50%;
+}
+
+.closeButton {
+  width: 32px;
+  height: 32px;
+  background: rgb(var(--foreground-rgb));
+  color: rgb(var(--background-end-rgb));
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.headerContent {
+  display: grid;
+  grid-template-columns: 32px auto;
+  gap: 16px;
   align-items: center;
 }

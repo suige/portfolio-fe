@@ -9,9 +9,10 @@ interface Props {
   initMessages: Message[];
   steps: Steps;
   isActive: boolean;
+  onClose?: () => void;
 }
 
-const Chatbot = ({ initMessages, steps, isActive }: Props) => {
+const Chatbot = ({ initMessages, steps, isActive, onClose }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   if (!isActive) {
@@ -21,7 +22,7 @@ const Chatbot = ({ initMessages, steps, isActive }: Props) => {
   return (
     <div className={styles.chatbot}>
       <div className={styles.header}>
-        <Header />
+        <Header handleClose={onClose} />
       </div>
       <div className={styles.container} ref={containerRef}>
         <Container

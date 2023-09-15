@@ -10,6 +10,7 @@ import { Logo } from '@/app/components/logo';
 import { GlobalNavLink } from '@/app/components/global-nav-link';
 import { cookies } from 'next/headers';
 import { SocialLinks } from './components/social-links';
+import { Chat } from './layout/chat';
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -49,29 +50,25 @@ export default function RootLayout({
       <body className={styles.body}>
         {disabledLoadingAnimation === 'true' ? <></> : <FirstLoading />}
         <header className={styles.header}>
+          <Link href="/">
+            <Logo />
+          </Link>
           <nav className={styles.globalNav}>
-            <Link href="/">
-              <Logo />
-            </Link>
             <ul>
               <li>
                 <GlobalNavLink href="/works" title="works">
                   works
                 </GlobalNavLink>
               </li>
-              <li>
-                <GlobalNavLink href="/contact" title="contact">
-                  contact
-                </GlobalNavLink>
-              </li>
             </ul>
+            <SocialLinks />
           </nav>
         </header>
         <div className={styles.container}>{children}</div>
         <footer className={styles.footer}>
           <div className={styles.copyright}>&copy; Kaori</div>
-          <SocialLinks />
         </footer>
+        <Chat />
         <BackgroundStars />
       </body>
     </html>

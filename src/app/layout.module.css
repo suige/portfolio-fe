@@ -6,15 +6,18 @@
 .header {
   grid-area: head;
   height: var(--header-height);
-  display: grid;
-  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 var(--global-padding);
 }
+
 .globalNav {
   font-family: var(--font-family-h);
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  gap: var(--size-3);
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -45,11 +48,11 @@
   padding: var(--size-1) var(--global-padding);
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: end;
+  justify-items: center;
   gap: var(--size-1);
 }
 .footer .copyright {
   text-align: center;
   margin: 0;
-  font-size: var(--font-size-sm);
+  font-size: 14px;
 }

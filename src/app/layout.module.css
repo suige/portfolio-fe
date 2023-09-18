@@ -14,6 +14,7 @@
 
 .globalNav {
   font-family: var(--font-family-h);
+  text-transform: uppercase;
   width: 100%;
   display: flex;
   gap: var(--size-3);
@@ -44,6 +45,7 @@
 
 .footer {
   grid-area: foot;
+  background: rgb(var(--background-start-rgb), 0.5);
   margin: 0;
   padding: var(--size-1) var(--global-padding);
   display: grid;
@@ -51,6 +53,35 @@
   justify-items: center;
   gap: var(--size-1);
 }
+
+.footerNav {
+  margin: var(--size-3) auto;
+}
+
+.footerNav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--size-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .footerNav ul {
+    justify-content: flex-start;
+  }
+}
+
+.footerNav li {
+  list-style: none;
+  min-inline-size: fit-content;
+  font-size: 16px;
+}
+
+.footerNav a {
+  color: rgb(var(--foreground-rgb), 0.6);
+}
+
 .footer .copyright {
   text-align: center;
   margin: 0;

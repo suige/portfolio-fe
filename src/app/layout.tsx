@@ -66,6 +66,37 @@ export default function RootLayout({
         </header>
         <div className={styles.container}>{children}</div>
         <footer className={styles.footer}>
+          <nav className={styles.footerNav}>
+            <ul>
+              <li>
+                <Link
+                  href="https://www.linkedin.com/in/kaorios/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://koroporch.com/blog/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Blog (Japanese Only)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://github.com/kaorios/portfolio-fe/issues/44"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Roadmap
+                </Link>
+              </li>
+            </ul>
+          </nav>
           <div className={styles.copyright}>&copy; Kaori</div>
         </footer>
         <Chat />

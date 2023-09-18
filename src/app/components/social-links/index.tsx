@@ -9,6 +9,7 @@ const SocialLinks = () => {
           href="https://github.com/kaorios"
           target="_blank"
           rel="noopener noreferrer"
+          title="GitHub"
         >
           <GitHub />
         </a>

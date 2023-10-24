@@ -1,6 +1,6 @@
 import { SocialLinks } from '../components/social-links';
 import styles from './page.module.css';
-import { Steamboat } from './steamboat';
+import { Steamboat } from '../components/steamboat';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

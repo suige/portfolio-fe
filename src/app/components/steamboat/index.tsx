@@ -1,4 +1,4 @@
-import styles from './steamboat.module.css';
+import styles from './index.module.css';
 
 const Steamboat = () => {
   return (

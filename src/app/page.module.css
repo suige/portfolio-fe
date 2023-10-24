@@ -75,6 +75,15 @@
   font-size: var(--font-size-sm);
 }
 
+.steamboat {
+  position: relative;
+  z-index: -1;
+  top: -100px;
+  margin-bottom: -118px;
+  width: min(300px, 100%);
+  margin-left: auto;
+}
+
 @media screen and (max-width: 768px) {
   .title {
     white-space: pre-wrap;

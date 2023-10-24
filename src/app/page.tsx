@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import styles from './page.module.css';
 import Link from 'next/link';
+import { Steamboat } from './components/steamboat';
 
 export default function Home() {
   const title = "Hi! I'm  Kaori :)".split('');
@@ -33,6 +34,9 @@ export default function Home() {
             building pleasant and effective teams.
           </p>
         </div>
+      </div>
+      <div className={styles.steamboat}>
+        <Steamboat />
       </div>
       <div className={styles.principles}>
         <div className={styles.principle}>
